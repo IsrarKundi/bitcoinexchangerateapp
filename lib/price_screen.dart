@@ -14,9 +14,7 @@ class _PriceScreenState extends State<PriceScreen> {
   String ethValue = '?';
   String ltcValue = '?';
 
-
-
-
+  // Method to create a dropdown for Android
   DropdownButton<String> androidDropdown() {
     List<DropdownMenuItem<String>> dropdownItems = [];
     for (String currency in currenciesList) {
@@ -39,6 +37,7 @@ class _PriceScreenState extends State<PriceScreen> {
     );
   }
 
+  // Method to create a picker for iOS
   CupertinoPicker iOSPicker() {
     List<Text> pickerItems = [];
     for (String currency in currenciesList) {
@@ -58,6 +57,7 @@ class _PriceScreenState extends State<PriceScreen> {
     );
   }
 
+  // Method to fetch data for all three coins
   void getData() async {
     try {
       double btcData = await CoinData().getCoinData('BTC',selectedCurrency);
@@ -94,6 +94,7 @@ class _PriceScreenState extends State<PriceScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Card for displaying BTC value
               Padding(
                 padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0),
                 child: Card(
@@ -115,6 +116,7 @@ class _PriceScreenState extends State<PriceScreen> {
                   ),
                 ),
               ),
+              // Card for displaying ETH value
               Padding(
                 padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0),
                 child: Card(
@@ -136,6 +138,7 @@ class _PriceScreenState extends State<PriceScreen> {
                   ),
                 ),
               ),
+              // Card for displaying LTC value
               Padding(
                 padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0),
                 child: Card(
@@ -160,6 +163,7 @@ class _PriceScreenState extends State<PriceScreen> {
             ],
           ),
 
+          // Container to hold the currency picker
           Container(
             height: 150.0,
             alignment: Alignment.center,

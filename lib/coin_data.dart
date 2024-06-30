@@ -2,6 +2,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+//List of currencies supported
 const List<String> currenciesList = [
   'AUD',
   'BRL',
@@ -26,13 +27,15 @@ const List<String> currenciesList = [
   'ZAR'
 ];
 
+//List of Crypto Currencies supported
 const List<String> cryptoList = [
   'BTC',
   'ETH',
   'LTC',
 ];
-
+// Base URL for the CoinAPI service
 const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate';
+// API key for accessing CoinAPI
 const apiKey = 'F89A617A-5EA1-4BC4-A42D-2C3F484A302B';
 
 
